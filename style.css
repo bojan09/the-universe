@@ -1,0 +1,205 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  font-size: 62.5%;
+}
+
+#universe {
+  background: black;
+  background: radial-gradient(#555, #000);
+}
+
+#stars {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  width: 100%;
+  background: url("images/stars.png");
+
+  /* Giving the stars a pulse in background */
+  animation: starPulse 2s infinite alternate;
+  -webkit-animation: starPulse 2s infinite alternate;
+}
+
+#sun {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  /*positiontrick:;
+  Findouttheelementheight/width.Thenaddhalfofthatinnegativemargin*/
+  margin-top: -10rem;
+  margin-left: -10rem;
+  z-index: 4;
+  height: 20rem;
+  width: 20rem;
+  background: orange;
+  background: radial-gradient(#f5c313, #ec7e08);
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  box-shadow: 0 0 50px #f5c91a;
+
+  /* Giving the sun a flare  */
+  animation: sunFire 2.5s infinite alternate;
+  -webkit-animation: sunFire 2.5s infinite alternate;
+}
+
+#earthOrbit {
+  /* border: solid 1px red; */
+  height: 70rem;
+  width: 70rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -30rem;
+  margin-left: -30rem;
+  z-index: 4;
+  /*Bringsitatopthestarsimg*/
+  border-radius: 100%;
+  -webkit-border-radius: 70%;
+  -moz-border-radius: 70%;
+  -ms-border-radius: 70%;
+  -o-border-radius: 70%;
+
+  /*Giving the spin animation*/
+  animation: spin 30s linear infinite;
+  -webkit-animation: spin 30s linear infinite;
+}
+
+.earth {
+  position: absolute;
+  top: 50%;
+  left: 0%;
+  margin-top: -4rem;
+
+  /*Giving  Earth the spin animation*/
+
+  animation: spin 5s linear infinite;
+  -webkit-animation: spin 5s linear infinite;
+}
+
+#moonOrbit {
+  /* border: solid 1px red; */
+  height: 12rem;
+  width: 12rem;
+  z-index: 4;
+  position: absolute;
+  top: 50%;
+  left: -2rem;
+  margin-top: -6rem;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+
+#moon {
+  height: 2rem;
+  width: 2rem;
+  background: #ddd;
+  background: radial-gradient(#ddd, #888);
+  border-radius: 100%;
+  -webkit-border-radius: 100%;
+  -moz-border-radius: 100%;
+  -ms-border-radius: 100%;
+  -o-border-radius: 100%;
+
+  /*Giving Moon the spin animation*/
+
+  animation: spin 7s linear reverse;
+  -webkit-animation: spin 7s linear reverse;
+}
+
+/* ------------------------ */
+/*  ANIMATIONS */
+/* ------------------------ */
+
+/* Stars pulse Animation */
+@keyframes starPulse {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0.2;
+  }
+}
+
+/* Sun (solar flare) Animation */
+@keyframes sunFire {
+  from {
+    box-shadow: 0 0 50px #f5c91a;
+  }
+  to {
+    box-shadow: 0 0 100px #f5c91a;
+  }
+}
+
+/* Rotate Animation */
+@keyframes spin {
+  from {
+    transform: rotate(0);
+    -webkit-transform: rotate(0);
+    -moz-transform: rotate(0);
+    -ms-transform: rotate(0);
+    -o-transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+  }
+}
+
+/* ------------------------ */
+/* MOBILE VERSION */
+/* ------------------------ */
+
+@media (max-width: 700px) {
+  html {
+    font-size: 40%;
+  }
+}
+
+@media (max-width: 400px) {
+  html {
+    font-size: 30%;
+  }
+  body {
+    width: 100%;
+    height: 100%;
+  }
+
+  img {
+    width: 8rem;
+    height: 8rem;
+  }
+}
+
+@media (max-width: 300px) {
+  html {
+    font-size: 25%;
+  }
+
+  body {
+    width: 100%;
+    height: 100%;
+  }
+
+  img {
+    width: 8rem;
+    height: 8rem;
+  }
+}
